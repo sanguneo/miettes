@@ -11,4 +11,4 @@
 
 이 저장소는 배포용입니다. 소개 페이지(GitHub Pages)와 APK 릴리즈만 담고 있습니다.
 
-Miettes by Croissant Mouse (크로아상생쥐)
+Miettes by 크로아상생쥐 (@croissmouse)
