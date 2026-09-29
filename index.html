@@ -133,6 +133,22 @@ ol.steps strong{color:var(--brown)}
 .tip p:last-child{margin:0}
 @media (max-width:820px){.install .wrap{grid-template-columns:1fr}}
 
+/* permissions */
+.perm .wrap>p.intro{max-width:40em;margin:0 0 24px}
+.perm .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.perm .card{padding:28px}
+.perm dl{margin:0}
+.perm dt{font-weight:800;color:var(--brown);margin:0 0 4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.perm dd{margin:0 0 18px}
+.perm dd:last-child{margin-bottom:0}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(243,223,194,.8);color:var(--muted)}
+.tag.need{background:var(--brown);color:#FFF8EE}
+.perm ul.plain{margin:0 0 14px;padding-left:18px}
+.perm ul.plain li{margin-bottom:6px}
+.perm .card p{margin:0 0 12px}
+.perm .card p:last-child{margin:0}
+@media (max-width:820px){.perm .cols{grid-template-columns:1fr}}
+
 /* limits */
 .limits ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
 .limits li{position:relative;padding-left:26px}
@@ -173,7 +189,7 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Miettes 처음으로"><img src="assets/icon-192.webp" width="34" height="34" alt="">Miettes <small>미에뜨</small></a>
     <nav class="links" aria-label="페이지 목차">
-      <a href="#story">이야기</a><a href="#principles">철학</a><a href="#features">기능</a><a href="#install">설치</a><a href="#limits">알아둘 점</a>
+      <a href="#story">이야기</a><a href="#principles">철학</a><a href="#features">기능</a><a href="#install">설치</a><a href="#permissions">권한</a><a href="#limits">알아둘 점</a>
     </nav>
     <a class="btn btn-primary" data-dl="header" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg>다운로드</a>
   </div>
@@ -278,7 +294,7 @@ footer a{color:var(--muted)}
         <h2>5분이면 이어 쓸 수 있어요</h2>
         <ol class="steps">
           <li><strong>APK를 받아 설치해요.</strong> 폰에서 <a data-dl="install" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk">다운로드</a>를 누르고, “출처를 알 수 없는 앱” 설치를 허용해 주세요.</li>
-          <li><strong>사진·동영상 접근을 모두 허용</strong>해요.</li>
+          <li><strong>사진·동영상 접근을 모두 허용</strong>해요. 어떤 권한을 왜 쓰는지는 <a href="#permissions">아래</a>에 적어 뒀어요.</li>
           <li><strong>메뉴 → OneDrive → Microsoft 로그인</strong> (개인 Microsoft 계정).</li>
           <li><strong>가져올 폴더를 확인</strong>해요. 기본값은 <code>사진/삼성 갤러리</code>, <code>사진/카메라 앨범</code>이고, OneDrive가 영어라면 <code>Pictures/Samsung Gallery</code>, <code>Pictures/Camera Roll</code>로 바꿔 주세요.</li>
           <li>폴더가 “최신”이 되면(첫 인덱싱은 몇 분 걸려요) <strong>새 사진 자동 업로드</strong>를 켜고, 배터리 최적화 예외를 허용해요.</li>
@@ -290,6 +306,43 @@ footer a{color:var(--muted)}
         <p>새 버전이 나오면 같은 방법으로 덮어 설치하면 돼요. 데이터와 로그인은 그대로 유지돼요.</p>
         <p>모든 버전은 <a href="https://github.com/sanguneo/miettes/releases">릴리즈 목록</a>에서 받을 수 있어요.</p>
       </aside>
+    </div>
+  </section>
+
+  <section class="perm" id="permissions">
+    <div class="wrap">
+      <p class="kicker">처음 열 때 물어보는 것들</p>
+      <h2>권한과 Microsoft 로그인</h2>
+      <p class="intro">Miettes는 처음 열면 필요한 권한을 한 번에 물어봐요. 무엇을 왜 쓰는지 미리 적어 둘게요. 연락처, 마이크, 카메라, 기기 위치 같은 권한은 쓰지 않아요.</p>
+      <div class="cols">
+        <div class="card">
+          <h3>폰 권한</h3>
+          <dl>
+            <dt>사진·동영상 <span class="tag need">필수</span></dt>
+            <dd>폰 사진을 타임라인에 보여주고 새 사진을 백업하려고 써요. 꼭 <strong>모두 허용</strong>을 골라 주세요. “선택한 항목만”을 고르면 고른 사진만 보이고, 새로 찍은 사진이 자동으로 백업되지 않아요.</dd>
+            <dt>사진 속 위치 정보</dt>
+            <dd>사진에 담긴 촬영 위치를 지우지 않고 원본 그대로 백업하고, 상세정보에서 지도로 보여주려고 써요.</dd>
+            <dt>알림</dt>
+            <dd>백업 진행 상황, 다시 로그인이 필요할 때, 백업이 오래 밀렸을 때 알려 드려요. 꺼도 앱은 그대로 동작해요.</dd>
+            <dt>배터리 최적화 예외 <span class="tag">선택</span></dt>
+            <dd>화면이 꺼져 있을 때도 백업이 멈추지 않게 해요. 처음에는 묻지 않고, <strong>메뉴 → 권한과 배터리</strong>에서 켤 수 있어요. 권한을 나중에 다시 주고 싶을 때도 여기서 요청하면 돼요.</dd>
+            <dt>사진을 지우거나 바꿀 때</dt>
+            <dd>삭제, 이동, 이름 바꾸기, 회전을 할 때 Android가 확인 창을 한 번 더 띄워요. 카메라 같은 다른 앱이 만든 사진은 앱이 마음대로 바꿀 수 없게 되어 있어서 그래요.</dd>
+          </dl>
+        </div>
+        <div class="card">
+          <h3>Microsoft 로그인</h3>
+          <p><strong>메뉴 → OneDrive → Microsoft 로그인</strong>을 누르면 Microsoft 로그인 화면(<code>login.microsoftonline.com</code>)이 브라우저로 열려요. 비밀번호는 Microsoft 화면에만 입력하니까 Miettes는 볼 수 없어요.</p>
+          <p>로그인하면 Microsoft가 권한 동의 화면을 보여줘요. Miettes가 요청하는 권한은 세 가지예요.</p>
+          <ul class="plain">
+            <li><strong>파일 읽기·쓰기</strong>: OneDrive 사진을 보여주고 새 사진을 올리려고 써요. Microsoft 권한 구조상 OneDrive 전체에 대한 권한으로 표시되지만, 실제로 읽는 건 설정한 사진 폴더뿐이에요. 쓰는 것도 백업한 사진, 그리고 지우거나 이름을 바꾸거나 링크로 공유한 사진뿐이에요.</li>
+            <li><strong>로그인 유지</strong>: 앱을 열 때마다 다시 로그인하지 않게 해요.</li>
+            <li><strong>기본 프로필 읽기</strong>: 메뉴에 로그인한 계정을 보여주려고 써요.</li>
+          </ul>
+          <p>로그인 정보는 폰 안의 앱 저장소에만 남고, Microsoft 말고는 어디로도 보내지 않아요. 휴대폰 백업에도 포함되지 않게 해 뒀어요.</p>
+          <p>연결을 끊고 싶으면 앱 <strong>메뉴 → OneDrive → 로그아웃</strong>을 누르거나, <a href="https://account.microsoft.com/">Microsoft 계정</a> → 개인정보 → “데이터에 액세스할 수 있는 앱 및 서비스”에서 권한을 없애면 돼요.</p>
+        </div>
+      </div>
     </div>
   </section>
 
