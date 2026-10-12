@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYQNV4VMKE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZYQNV4VMKE');
+</script>
+<title>Miettes — Your scattered photos, one timeline</title>
+<meta name="description" content="Photos on your phone and photos left only in OneDrive, together in one timeline. An Android gallery that lets you keep using Samsung Gallery the way you did, even after its OneDrive sync ended.">
+<link rel="canonical" href="https://miettes.sanguneo.com/en/">
+<link rel="alternate" hreflang="ko" href="https://miettes.sanguneo.com/">
+<link rel="alternate" hreflang="en" href="https://miettes.sanguneo.com/en/">
+<link rel="alternate" hreflang="ja" href="https://miettes.sanguneo.com/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://miettes.sanguneo.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://miettes.sanguneo.com/">
+<meta name="theme-color" content="#FBF5EA">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Miettes — Your scattered photos, one timeline">
+<meta property="og:description" content="Photos on your phone and photos left only in OneDrive, together in one timeline. An Android gallery that lets you keep using Samsung Gallery the way you did, even after its OneDrive sync ended.">
+<meta property="og:url" content="https://miettes.sanguneo.com/en/">
+<meta property="og:image" content="https://miettes.sanguneo.com/assets/og.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --cream:#FBF5EA;--paper:#FFFDF8;--ink:#3B2414;--brown:#7A3E1B;--brown-2:#5F2F13;--crust:#C8742A;--crumb:#F3DFC2;
+  --muted:#7C6553;--line:rgba(59,36,20,.10);
+  --shadow:0 1px 2px rgba(59,36,20,.06),0 12px 32px -12px rgba(59,36,20,.18);
+  --r:20px;--max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.75 "Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+html:lang(ja) body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",Meiryo,sans-serif;word-break:normal;line-break:strict}
+html:lang(zh-CN) body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;word-break:normal;line-break:strict}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brown);text-underline-offset:3px}
+a:hover{color:var(--crust)}
+:focus-visible{outline:3px solid var(--crust);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--paper);padding:8px 12px;border-radius:8px}
+.skip:focus{left:8px;z-index:10}
+
+/* header */
+header.top{position:sticky;top:0;z-index:5;background:rgba(251,245,234,.86);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--brown);font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand small{font-weight:600;color:var(--muted);font-size:14px}
+nav.links{margin-left:auto;display:flex;gap:22px;font-size:15px}
+nav.links a{color:var(--ink);text-decoration:none;font-weight:600}
+nav.links a:hover{color:var(--crust)}
+.top .btn{padding:9px 16px;font-size:15px}
+.lang{position:relative}
+.lang select{font:inherit;font-size:14px;font-weight:600;line-height:1.2;color:var(--ink);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237C6553' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 11px center;border:1px solid var(--line);border-radius:999px;padding:8px 30px 8px 13px;-webkit-appearance:none;appearance:none;cursor:pointer}
+.lang select:hover{box-shadow:var(--shadow)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:820px){nav.links{display:none}.top .lang{margin-left:auto}}
+@media (max-width:480px){.top .wrap{gap:10px}.brand small{display:none}.top .btn{padding:9px 11px}.top .btn .t{display:none}}
+
+/* buttons & pills */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--brown);color:#FFF8EE;box-shadow:0 8px 20px -10px rgba(122,62,27,.7)}
+.btn-primary:hover{background:var(--brown-2);color:#FFF8EE;transform:translateY(-1px)}
+.btn-ghost{background:var(--paper);color:var(--brown);border:1px solid var(--line)}
+.btn-ghost:hover{color:var(--brown);transform:translateY(-1px);box-shadow:var(--shadow)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.pills li{font-size:14px;font-weight:600;color:var(--muted);background:rgba(243,223,194,.55);padding:5px 12px;border-radius:999px}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;color:var(--crust);font-weight:700;font-size:15px;margin:0 0 14px}
+h1{font-size:clamp(34px,5.2vw,60px);line-height:1.15;letter-spacing:-.025em;font-weight:800;color:var(--brown);margin:0 0 20px}
+.lead{font-size:19px;color:var(--ink);margin:0 0 28px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.phone{justify-self:center;width:min(300px,100%);padding:10px;background:#2B1A0F;border-radius:40px;box-shadow:0 30px 60px -24px rgba(59,36,20,.45)}
+.phone img{border-radius:30px;width:100%;aspect-ratio:300/650;background:var(--crumb)}
+@media (max-width:820px){.hero{padding:44px 0 24px}.hero .wrap{grid-template-columns:1fr;gap:36px}.phone{width:min(260px,80%)}}
+
+/* sections */
+section{padding:72px 0}
+.kicker{color:var(--crust);font-weight:700;font-size:15px;margin:0 0 8px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.3;letter-spacing:-.02em;font-weight:800;color:var(--brown);margin:0 0 18px}
+h3{font-size:19px;line-height:1.45;font-weight:800;color:var(--brown);margin:0 0 8px}
+.prose{max-width:40em}
+.prose p{margin:0 0 16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+
+/* thanks */
+.thanks{padding:24px 0 8px}
+.thanks .card{padding:34px 36px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.thanks img{width:88px;height:88px;border-radius:22px}
+.thanks p{margin:0}
+.thanks strong{color:var(--brown);font-size:20px;display:block;margin-bottom:6px}
+.sign{margin-top:10px!important;color:var(--muted);font-size:15px}
+@media (max-width:640px){.thanks .card{grid-template-columns:1fr;padding:26px 22px}.thanks img{width:64px;height:64px;border-radius:16px}}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story figure{margin:0}
+.story figure img{border-radius:var(--r);box-shadow:var(--shadow);aspect-ratio:2/1;object-fit:cover;width:100%}
+blockquote{margin:0 0 20px;font-size:22px;font-weight:800;color:var(--brown);letter-spacing:-.01em}
+@media (max-width:820px){.story .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* principles */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(2,1fr)}
+.g8{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.g8{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.g4,.g8{grid-template-columns:1fr}}
+.principle{padding:28px}
+.principle p,.feature p{margin:0;color:var(--ink)}
+.tile{width:48px;height:48px;border-radius:14px;background:var(--crumb);display:grid;place-items:center;margin-bottom:16px;color:var(--crust)}
+.tile svg{width:24px;height:24px}
+.feature{padding:22px}
+.feature .tile{width:40px;height:40px;border-radius:12px;margin-bottom:12px}
+.feature .tile svg{width:20px;height:20px}
+.feature h3{font-size:17px}
+.feature p{font-size:15px;line-height:1.65}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:rgba(243,223,194,.6);padding:1px 6px;border-radius:6px}
+
+/* install */
+.install .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 22px 52px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--brown);color:#FFF8EE;font-weight:800;display:grid;place-items:center;font-size:15px}
+ol.steps strong{color:var(--brown)}
+.tip{padding:26px}
+.tip h3{display:flex;gap:8px;align-items:center}
+.tip h3 svg{width:20px;height:20px;color:var(--crust)}
+.tip p{margin:0 0 12px}
+.tip p:last-child{margin:0}
+@media (max-width:820px){.install .wrap{grid-template-columns:1fr}}
+
+/* permissions */
+.perm .wrap>p.intro{max-width:40em;margin:0 0 24px}
+.perm .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.perm .card{padding:28px}
+.perm dl{margin:0}
+.perm dt{font-weight:800;color:var(--brown);margin:0 0 4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.perm dd{margin:0 0 18px}
+.perm dd:last-child{margin-bottom:0}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(243,223,194,.8);color:var(--muted)}
+.tag.need{background:var(--brown);color:#FFF8EE}
+.perm ul.plain{margin:0 0 14px;padding-left:18px}
+.perm ul.plain li{margin-bottom:6px}
+.perm .card p{margin:0 0 12px}
+.perm .card p:last-child{margin:0}
+@media (max-width:820px){.perm .cols{grid-template-columns:1fr}}
+
+/* limits */
+.limits ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+.limits li{position:relative;padding-left:26px}
+.limits li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--crust);opacity:.7}
+@media (max-width:760px){.limits ul{grid-template-columns:1fr}}
+
+/* closing */
+.closing .card{padding:48px 40px;text-align:center;background:linear-gradient(180deg,var(--paper),#FFF6E8)}
+.closing p{max-width:34em;margin:0 auto 24px}
+.closing .cta{justify-content:center;margin:0}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-drive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-images" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="m8 17 4-4 4 4"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.17 6.81a1 1 0 0 0-3.98-3.98L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.62l4.35-1.32a2 2 0 0 0 .83-.5z"/><path d="m15 5 4 4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Miettes home" data-i18n-attr="aria-label:brandAria"><img src="/assets/icon-192.webp" width="34" height="34" alt="">Miettes <small data-i18n="brandSub"></small></a>
+    <nav class="links" aria-label="Page contents" data-i18n-attr="aria-label:navAria">
+      <a href="#story" data-i18n="nav1">Story</a><a href="#principles" data-i18n="nav2">Philosophy</a><a href="#features" data-i18n="nav3">Features</a><a href="#install" data-i18n="nav4">Install</a><a href="#permissions" data-i18n="nav5">Permissions</a><a href="#limits" data-i18n="nav6">Good to know</a>
+    </nav>
+    <div class="lang">
+      <label class="sr" for="lang" data-i18n="langLabel">Language</label>
+      <select id="lang">
+        <option value="ko" lang="ko">한국어</option>
+        <option value="en" lang="en">English</option>
+        <option value="ja" lang="ja">日本語</option>
+        <option value="zh" lang="zh-CN">简体中文</option>
+      </select>
+    </div>
+    <a class="btn btn-primary" data-dl="header" aria-label="Download" data-i18n-attr="aria-label:dl" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span class="t" data-i18n="dl">Download</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">A gallery for life after Samsung Gallery’s OneDrive sync</p>
+        <h1 data-i18n="h1">Your scattered photos,<br>one timeline.</h1>
+        <p class="lead" data-i18n="lead">Today’s photos on your phone and years-old photos left only in OneDrive, shown together in one timeline. No need to care whether a photo is on your phone or in the cloud. Just open it like the Samsung Gallery you’re used to.</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-dl="hero" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="dlApk">Download APK · v0.6.0</span></a>
+          <a class="btn btn-ghost" href="#install" data-i18n="seeInstall">How to install</a>
+        </div>
+        <ul class="pills" aria-label="Summary" data-i18n-attr="aria-label:pillsAria" data-i18n="pills"><li>Android 13+</li><li>Personal OneDrive</li><li>About 4.9 MB</li><li>Free · No ads</li><li>한국어 · English · 日本語 · 中文</li></ul>
+      </div>
+      <div class="phone"><img src="/assets/screen-en.webp" width="300" height="650" alt="Miettes in English: the photo timeline with backed-up, device-only and cloud-only photos" data-i18n-attr="alt:demoAlt;src:demoSrc" fetchpriority="low" decoding="async"></div>
+    </div>
+  </section>
+
+  <div class="thanks">
+    <div class="wrap">
+      <div class="card">
+        <img src="/assets/icon-192.webp" width="88" height="88" alt="">
+        <div>
+          <p data-i18n="thanks"><strong>Thank you so much for stopping by.</strong>Just reaching this page means a lot to me. I built Miettes as the gallery I use every day, and I’m sharing it in the hope that it helps others with the same problem.</p>
+          <p class="sign" data-i18n="sign">— Croissant Mouse (@croissmouse)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="prose">
+        <p class="kicker" data-i18n="storyK">What the name means</p>
+        <h2 data-i18n="storyH">Photos are crumbs of the time we’ve lived</h2>
+        <p data-i18n="story1"><strong>Miettes</strong> is French for “crumbs, little pieces.” Like the crumbs left after a croissant, photos felt to me like small moments and fragments of memory that fall away from everyday life.</p>
+        <p data-i18n="story2">On September 30, 2026, Samsung Gallery’s OneDrive sync ended. From that day, old photos that lived only in OneDrive vanished from the gallery, and cloud photos could only be seen by opening the OneDrive app separately. And with limited phone storage, you can’t keep every photo on the phone either.</p>
+        <p data-i18n="story3">So I wanted just one thing: <strong>to keep using Samsung Gallery as if nothing had happened.</strong></p>
+      </div>
+      <figure>
+        <img src="/assets/hero-1280.webp" srcset="/assets/hero-720.webp 720w, /assets/hero-1280.webp 1280w" sizes="(max-width:820px) 100vw, 540px" width="1280" height="640" alt="Illustration of a white mouse on a croissant with photo cards, and the Miettes logo" data-i18n-attr="alt:heroAlt" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap">
+      <p class="kicker" data-i18n="prK">What I wanted to keep</p>
+      <h2 data-i18n="prH">A gallery with nothing new to learn</h2>
+      <div class="grid g4">
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-phone"/></svg></div>
+          <h3 data-i18n="pr1h">The experience you already know</h3>
+          <p data-i18n="pr1">One UI–style tabs and large titles, pinch to zoom between 2 and 12 columns, long-press and drag to select, swipe up for details: it follows how Samsung Gallery behaves. Tap Edit and Samsung’s photo and video editors open directly, and backups go to the same Samsung Gallery folder in OneDrive that Samsung used.</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-drive"/></svg></div>
+          <h3 data-i18n="pr2h">No extra phone storage</h3>
+          <p data-i18n="pr2">Cloud photos stay in the cloud while you view them. Only thumbnails are cached on the phone (up to 1 GB, oldest cleaned up automatically), and originals are loaded or streamed only when you open them.</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+          <h3 data-i18n="pr3h">Your photos’ safety comes first</h3>
+          <p data-i18n="pr3">Every upload is checked against OneDrive’s hash to make sure it arrived intact. Free up space only deletes verified photos, and it’s off by default. Deleted photos can be restored from the trash for 30 days, and a safeguard stops deletion if too many photos disappear at once.</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-lock"/></svg></div>
+          <h3 data-i18n="pr4h">Your photos stay between you and Microsoft</h3>
+          <p data-i18n="pr4">There’s no separate server. Your phone talks directly to Microsoft’s official API, and you sign in on Microsoft’s own sign-in page. I never receive your photos or account information.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <p class="kicker" data-i18n="ftK">What you can do</p>
+      <h2 data-i18n="ftH">Phone photos and cloud photos on one screen</h2>
+      <div class="grid g8">
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-images"/></svg></div><h3 data-i18n="ft1h">One timeline</h3><p data-i18n="ft1">Merges phone and OneDrive photos by date and shows duplicates as one.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-cloud"/></svg></div><h3 data-i18n="ft2h">See where each photo lives</h3><p data-i18n="ft2">Backed up, device only, cloud only, waiting to upload, failed: told apart with icons and filters.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-upload"/></svg></div><h3 data-i18n="ft3h">Automatic backup</h3><p data-i18n="ft3">Uploads new photos to OneDrive and resumes large files. Photos edited on the device replace the same file.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-pencil"/></svg></div><h3 data-i18n="ft4h">Edit with Samsung’s editors</h3><p data-i18n="ft4">Photos and videos open straight in Samsung’s editors. For photos only in OneDrive, the original is downloaded and handed over.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-book"/></svg></div><h3 data-i18n="ft5h">Stories</h3><p data-i18n="ft5">On this day N years ago, plus busy days and trips, grouped automatically.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-search"/></svg></div><h3 data-i18n="ft6h">Search</h3><p data-i18n="ft6">Find by file name, date (2024, 2024.5), album, videos, favorites, or GIF.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-play"/></svg></div><h3 data-i18n="ft7h">Built-in player</h3><p data-i18n="ft7">Videos play inside the app, and cloud videos stream without downloading. Motion photos and GIFs move too.</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-share"/></svg></div><h3 data-i18n="ft8h">Share and tidy up</h3><p data-i18n="ft8">Share many cloud photos at once. Plus albums, trash, and cleanup for screenshots, duplicates, and large videos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="install" id="install">
+    <div class="wrap">
+      <div>
+        <p class="kicker" data-i18n="inK">Install and first setup</p>
+        <h2 data-i18n="inH">Back up and running in 5 minutes</h2>
+        <ol class="steps">
+          <li data-i18n="in1"><strong>Download and install the APK.</strong> Tap <a data-dl="install" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk">Download</a> on your phone and allow installing unknown apps.</li>
+          <li data-i18n="in2"><strong>Allow access to all photos and videos.</strong> Which permissions are used and why is explained <a href="#permissions">below</a>.</li>
+          <li data-i18n="in3"><strong>Menu → OneDrive → Microsoft sign-in</strong> (personal Microsoft account).</li>
+          <li data-i18n="in4"><strong>Check the folders to import.</strong> When you sign in, Miettes finds your Samsung Gallery and Camera Roll folders automatically, whatever language your OneDrive uses. If you use different folders, change them in the <strong>Menu</strong>.</li>
+          <li data-i18n="in5">Once the folders show “up to date” (the first indexing takes a few minutes), turn on <strong>auto-upload new photos</strong> and allow the battery optimization exemption.</li>
+        </ol>
+      </div>
+      <aside class="card tip" aria-label="Install tips" data-i18n-attr="aria-label:tipAria">
+        <h3><svg aria-hidden="true"><use href="#i-bulb"/></svg><span data-i18n="tipH">Good to know</span></h3>
+        <p data-i18n="tip1">To avoid duplicate uploads, turn off <strong>Samsung Gallery’s OneDrive sync</strong> and <strong>the OneDrive app’s camera backup</strong>. Photos Samsung already uploaded aren’t uploaded again; they’re just linked.</p>
+        <p data-i18n="tip2">When a new version comes out, install it over the old one the same way. Your data and sign-in are kept.</p>
+        <p data-i18n="tip3">Every version is available on the <a href="https://github.com/sanguneo/miettes/releases">releases page</a>.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="perm" id="permissions">
+    <div class="wrap">
+      <p class="kicker" data-i18n="pmK">What it asks the first time</p>
+      <h2 data-i18n="pmH">Permissions and Microsoft sign-in</h2>
+      <p class="intro" data-i18n="pmIntro">Miettes asks for the permissions it needs all at once when you first open it. Here’s what each one is for. It doesn’t use contacts, microphone, camera, or device location.</p>
+      <div class="cols">
+        <div class="card">
+          <h3 data-i18n="pmPhoneH">Phone permissions</h3>
+          <dl data-i18n="pmPhone"><dt>Photos and videos <span class="tag need">Required</span></dt>
+<dd>Used to show your phone photos in the timeline and back up new ones. Be sure to choose <strong>Allow all</strong>. If you pick “Selected photos only,” only those photos appear and new photos aren’t backed up automatically.</dd>
+<dt>Location in photos</dt>
+<dd>Used to back up photos with their capture location intact and to show it on a map in details.</dd>
+<dt>Notifications</dt>
+<dd>Lets you know about backup progress, when you need to sign in again, and when backups have been stuck for a long time. The app works fine with them off.</dd>
+<dt>Battery optimization exemption <span class="tag">Optional</span></dt>
+<dd>Keeps backups running while the screen is off. It isn’t requested at first; you can turn it on in <strong>Menu → Permissions and battery</strong>. You can also request permissions again from there.</dd>
+<dt>When deleting or changing photos</dt>
+<dd>Android shows one extra confirmation when you delete, move, rename, or rotate. That’s because apps can’t freely modify photos created by other apps, such as the camera.</dd></dl>
+        </div>
+        <div class="card">
+          <h3 data-i18n="pmMsH">Microsoft sign-in</h3>
+          <p data-i18n="pmMs1">Tap <strong>Menu → OneDrive → Microsoft sign-in</strong> and Microsoft’s sign-in page (<code>login.microsoftonline.com</code>) opens in your browser. You type your password only on Microsoft’s page, so Miettes never sees it.</p>
+          <p data-i18n="pmMs2">After you sign in, Microsoft shows a consent screen. Miettes asks for three permissions.</p>
+          <ul class="plain" data-i18n="pmMsList"><li><strong>Read and write files</strong>: used to show your OneDrive photos and upload new ones. Because of how Microsoft permissions work, it’s shown as access to all of OneDrive, but Miettes only reads the photo folders you set, and only writes photos it backs up or that you delete, rename, or share as links.</li>
+<li><strong>Stay signed in</strong>: so you don’t have to sign in every time you open the app.</li>
+<li><strong>Read basic profile</strong>: used to show the signed-in account in the menu.</li></ul>
+          <p data-i18n="pmMs3">Sign-in data stays only in the app’s storage on your phone and is never sent anywhere but Microsoft. It’s also excluded from phone backups.</p>
+          <p data-i18n="pmMs4">To disconnect, tap <strong>Menu → OneDrive → Sign out</strong> in the app, or remove access under <a href="https://account.microsoft.com/">Microsoft account</a> → Privacy → “Apps and services that can access your data.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="limits" id="limits">
+    <div class="wrap">
+      <p class="kicker" data-i18n="lmK">Before you start</p>
+      <h2 data-i18n="lmH">What doesn’t work yet</h2>
+      <ul data-i18n="lmList"><li>Built and tested for <strong>Android 13+ on Samsung Galaxy</strong> (Galaxy S24 and an Android 13 emulator). Other phones haven’t been tested, and Samsung editor integration only works on Samsung phones.</li>
+<li><strong>Personal OneDrive only.</strong> Work and school accounts haven’t been tested.</li>
+<li><strong>It’s not a Play Store app.</strong> You install it yourself and there are no automatic updates, so get new versions from this page.</li>
+<li>Tapping the thumbnail in the camera app still opens Samsung Gallery. Samsung Camera decides that, and it can’t be changed.</li>
+<li>Miettes doesn’t appear as a picker when you attach photos in other apps (like messengers). For photos only in OneDrive, send them with Share in Miettes.</li>
+<li>Searching by what’s in a photo (like “beach” or “dog”) and face recognition aren’t available yet.</li>
+<li>Motion photos only move when they’re on the device. Cloud-only motion photos show as still images.</li>
+<li>Saving in Samsung’s editor creates a new copy, so the edited version appears separately in the timeline.</li>
+<li>Uploads follow Android’s background rules, so they may not happen right away.</li>
+<li>When you also delete from the device a photo deleted in OneDrive, Android shows a confirmation once.</li></ul>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="card">
+        <h2 data-i18n="clH">All the scattered pieces, back in one place</h2>
+        <p data-i18n="clP">Wherever those pieces are scattered, I wanted you to be able to look back on them easily, in one place. Give it a try, and if anything bothers you or there’s something you’d like, please let me know. I’ll read every message carefully.</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-dl="closing" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="dlApk">Download APK · v0.6.0</span></a>
+          <a class="btn btn-ghost" data-fb="closing" href="https://github.com/sanguneo/miettes/issues" data-i18n="feedback">Send feedback</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="ftBy"><strong>Miettes</strong> by Croissant Mouse (@croissmouse)</span>
+    <span><a href="https://github.com/sanguneo/miettes/releases" data-i18n="ftRel">Releases</a> · <a data-fb="footer" href="https://github.com/sanguneo/miettes/issues" data-i18n="ftFb">Feedback and bug reports</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  // Each language is a static page (/, /en/, /ja/, /zh/) so link previews show the right language.
+  // Generated by build-i18n.ts from i18n.json; edit the Korean in index.html and the rest in i18n.json.
+  var PATH = { ko: '/', en: '/en/', ja: '/ja/', zh: '/zh/' }, KEY = 'miettes-lang';
+  var cur = document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang;
+  function norm(l) { l = String(l || '').toLowerCase().split(/[-_]/)[0]; return PATH[l] ? l : null; }
+  function go(lang) { location.replace(PATH[lang] + location.hash); }
+  if (cur === 'ko' && location.pathname === '/') {
+    var want = norm(new URLSearchParams(location.search).get('lang'));
+    if (!want) { try { want = norm(localStorage.getItem(KEY)); } catch (e) {} }
+    if (!want) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+      for (var i = 0; i < ls.length && !want; i++) want = norm(ls[i]);
+      want = want || 'en';
+    }
+    if (want !== 'ko') return go(want);
+  }
+  var sel = document.getElementById('lang');
+  sel.value = cur;
+  sel.addEventListener('change', function () {
+    try { localStorage.setItem(KEY, sel.value); } catch (e) {}
+    if (window.gtag) gtag('event', 'select_language', { language: sel.value });
+    go(sel.value);
+  });
+})();
+</script>
+<script>
+  // GA4: APK links go to github.com, so enhanced measurement does not count them as downloads.
+  document.addEventListener('click', function (e) {
+    if (!window.gtag) return;
+    var dl = e.target.closest('a[data-dl]');
+    if (dl) gtag('event', 'file_download', {
+      file_name: 'Miettes.apk', file_extension: 'apk', app_version: '0.6.0',
+      link_location: dl.dataset.dl, link_url: dl.href, transport_type: 'beacon'
+    });
+    var fb = e.target.closest('a[data-fb]');
+    if (fb) gtag('event', 'feedback_click', { link_location: fb.dataset.fb, transport_type: 'beacon' });
+  });
+</script>
+</body>
+</html>

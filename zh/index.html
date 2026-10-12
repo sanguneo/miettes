@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYQNV4VMKE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZYQNV4VMKE');
+</script>
+<title>Miettes — 散落的照片，汇成一条时间线</title>
+<meta name="description" content="把手机里的照片和只留在 OneDrive 的照片放进同一条时间线。三星相册的 OneDrive 同步结束后，也能像以前一样继续使用的 Android 相册——Miettes。">
+<link rel="canonical" href="https://miettes.sanguneo.com/zh/">
+<link rel="alternate" hreflang="ko" href="https://miettes.sanguneo.com/">
+<link rel="alternate" hreflang="en" href="https://miettes.sanguneo.com/en/">
+<link rel="alternate" hreflang="ja" href="https://miettes.sanguneo.com/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://miettes.sanguneo.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://miettes.sanguneo.com/">
+<meta name="theme-color" content="#FBF5EA">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Miettes — 散落的照片，汇成一条时间线">
+<meta property="og:description" content="把手机里的照片和只留在 OneDrive 的照片放进同一条时间线。三星相册的 OneDrive 同步结束后，也能像以前一样继续使用的 Android 相册——Miettes。">
+<meta property="og:url" content="https://miettes.sanguneo.com/zh/">
+<meta property="og:image" content="https://miettes.sanguneo.com/assets/og.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --cream:#FBF5EA;--paper:#FFFDF8;--ink:#3B2414;--brown:#7A3E1B;--brown-2:#5F2F13;--crust:#C8742A;--crumb:#F3DFC2;
+  --muted:#7C6553;--line:rgba(59,36,20,.10);
+  --shadow:0 1px 2px rgba(59,36,20,.06),0 12px 32px -12px rgba(59,36,20,.18);
+  --r:20px;--max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.75 "Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+html:lang(ja) body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",Meiryo,sans-serif;word-break:normal;line-break:strict}
+html:lang(zh-CN) body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;word-break:normal;line-break:strict}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brown);text-underline-offset:3px}
+a:hover{color:var(--crust)}
+:focus-visible{outline:3px solid var(--crust);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--paper);padding:8px 12px;border-radius:8px}
+.skip:focus{left:8px;z-index:10}
+
+/* header */
+header.top{position:sticky;top:0;z-index:5;background:rgba(251,245,234,.86);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--brown);font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand small{font-weight:600;color:var(--muted);font-size:14px}
+nav.links{margin-left:auto;display:flex;gap:22px;font-size:15px}
+nav.links a{color:var(--ink);text-decoration:none;font-weight:600}
+nav.links a:hover{color:var(--crust)}
+.top .btn{padding:9px 16px;font-size:15px}
+.lang{position:relative}
+.lang select{font:inherit;font-size:14px;font-weight:600;line-height:1.2;color:var(--ink);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237C6553' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 11px center;border:1px solid var(--line);border-radius:999px;padding:8px 30px 8px 13px;-webkit-appearance:none;appearance:none;cursor:pointer}
+.lang select:hover{box-shadow:var(--shadow)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:820px){nav.links{display:none}.top .lang{margin-left:auto}}
+@media (max-width:480px){.top .wrap{gap:10px}.brand small{display:none}.top .btn{padding:9px 11px}.top .btn .t{display:none}}
+
+/* buttons & pills */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--brown);color:#FFF8EE;box-shadow:0 8px 20px -10px rgba(122,62,27,.7)}
+.btn-primary:hover{background:var(--brown-2);color:#FFF8EE;transform:translateY(-1px)}
+.btn-ghost{background:var(--paper);color:var(--brown);border:1px solid var(--line)}
+.btn-ghost:hover{color:var(--brown);transform:translateY(-1px);box-shadow:var(--shadow)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.pills li{font-size:14px;font-weight:600;color:var(--muted);background:rgba(243,223,194,.55);padding:5px 12px;border-radius:999px}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;color:var(--crust);font-weight:700;font-size:15px;margin:0 0 14px}
+h1{font-size:clamp(34px,5.2vw,60px);line-height:1.15;letter-spacing:-.025em;font-weight:800;color:var(--brown);margin:0 0 20px}
+.lead{font-size:19px;color:var(--ink);margin:0 0 28px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.phone{justify-self:center;width:min(300px,100%);padding:10px;background:#2B1A0F;border-radius:40px;box-shadow:0 30px 60px -24px rgba(59,36,20,.45)}
+.phone img{border-radius:30px;width:100%;aspect-ratio:300/650;background:var(--crumb)}
+@media (max-width:820px){.hero{padding:44px 0 24px}.hero .wrap{grid-template-columns:1fr;gap:36px}.phone{width:min(260px,80%)}}
+
+/* sections */
+section{padding:72px 0}
+.kicker{color:var(--crust);font-weight:700;font-size:15px;margin:0 0 8px}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.3;letter-spacing:-.02em;font-weight:800;color:var(--brown);margin:0 0 18px}
+h3{font-size:19px;line-height:1.45;font-weight:800;color:var(--brown);margin:0 0 8px}
+.prose{max-width:40em}
+.prose p{margin:0 0 16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+
+/* thanks */
+.thanks{padding:24px 0 8px}
+.thanks .card{padding:34px 36px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.thanks img{width:88px;height:88px;border-radius:22px}
+.thanks p{margin:0}
+.thanks strong{color:var(--brown);font-size:20px;display:block;margin-bottom:6px}
+.sign{margin-top:10px!important;color:var(--muted);font-size:15px}
+@media (max-width:640px){.thanks .card{grid-template-columns:1fr;padding:26px 22px}.thanks img{width:64px;height:64px;border-radius:16px}}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story figure{margin:0}
+.story figure img{border-radius:var(--r);box-shadow:var(--shadow);aspect-ratio:2/1;object-fit:cover;width:100%}
+blockquote{margin:0 0 20px;font-size:22px;font-weight:800;color:var(--brown);letter-spacing:-.01em}
+@media (max-width:820px){.story .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* principles */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(2,1fr)}
+.g8{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.g8{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.g4,.g8{grid-template-columns:1fr}}
+.principle{padding:28px}
+.principle p,.feature p{margin:0;color:var(--ink)}
+.tile{width:48px;height:48px;border-radius:14px;background:var(--crumb);display:grid;place-items:center;margin-bottom:16px;color:var(--crust)}
+.tile svg{width:24px;height:24px}
+.feature{padding:22px}
+.feature .tile{width:40px;height:40px;border-radius:12px;margin-bottom:12px}
+.feature .tile svg{width:20px;height:20px}
+.feature h3{font-size:17px}
+.feature p{font-size:15px;line-height:1.65}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:rgba(243,223,194,.6);padding:1px 6px;border-radius:6px}
+
+/* install */
+.install .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 22px 52px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--brown);color:#FFF8EE;font-weight:800;display:grid;place-items:center;font-size:15px}
+ol.steps strong{color:var(--brown)}
+.tip{padding:26px}
+.tip h3{display:flex;gap:8px;align-items:center}
+.tip h3 svg{width:20px;height:20px;color:var(--crust)}
+.tip p{margin:0 0 12px}
+.tip p:last-child{margin:0}
+@media (max-width:820px){.install .wrap{grid-template-columns:1fr}}
+
+/* permissions */
+.perm .wrap>p.intro{max-width:40em;margin:0 0 24px}
+.perm .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.perm .card{padding:28px}
+.perm dl{margin:0}
+.perm dt{font-weight:800;color:var(--brown);margin:0 0 4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.perm dd{margin:0 0 18px}
+.perm dd:last-child{margin-bottom:0}
+.tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(243,223,194,.8);color:var(--muted)}
+.tag.need{background:var(--brown);color:#FFF8EE}
+.perm ul.plain{margin:0 0 14px;padding-left:18px}
+.perm ul.plain li{margin-bottom:6px}
+.perm .card p{margin:0 0 12px}
+.perm .card p:last-child{margin:0}
+@media (max-width:820px){.perm .cols{grid-template-columns:1fr}}
+
+/* limits */
+.limits ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+.limits li{position:relative;padding-left:26px}
+.limits li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--crust);opacity:.7}
+@media (max-width:760px){.limits ul{grid-template-columns:1fr}}
+
+/* closing */
+.closing .card{padding:48px 40px;text-align:center;background:linear-gradient(180deg,var(--paper),#FFF6E8)}
+.closing p{max-width:34em;margin:0 auto 24px}
+.closing .cta{justify-content:center;margin:0}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">跳到正文</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-drive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-images" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="m8 17 4-4 4 4"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.17 6.81a1 1 0 0 0-3.98-3.98L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.62l4.35-1.32a2 2 0 0 0 .83-.5z"/><path d="m15 5 4 4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Miettes 首页" data-i18n-attr="aria-label:brandAria"><img src="/assets/icon-192.webp" width="34" height="34" alt="">Miettes <small data-i18n="brandSub"></small></a>
+    <nav class="links" aria-label="页面目录" data-i18n-attr="aria-label:navAria">
+      <a href="#story" data-i18n="nav1">故事</a><a href="#principles" data-i18n="nav2">理念</a><a href="#features" data-i18n="nav3">功能</a><a href="#install" data-i18n="nav4">安装</a><a href="#permissions" data-i18n="nav5">权限</a><a href="#limits" data-i18n="nav6">注意事项</a>
+    </nav>
+    <div class="lang">
+      <label class="sr" for="lang" data-i18n="langLabel">语言</label>
+      <select id="lang">
+        <option value="ko" lang="ko">한국어</option>
+        <option value="en" lang="en">English</option>
+        <option value="ja" lang="ja">日本語</option>
+        <option value="zh" lang="zh-CN">简体中文</option>
+      </select>
+    </div>
+    <a class="btn btn-primary" data-dl="header" aria-label="下载" data-i18n-attr="aria-label:dl" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span class="t" data-i18n="dl">下载</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">为三星相册 OneDrive 同步结束之后而做的相册</p>
+        <h1 data-i18n="h1">散落的照片，<br>汇成一条时间线。</h1>
+        <p class="lead" data-i18n="lead">手机里今天拍的照片，和只留在 OneDrive 里的多年前的照片，在同一条时间线里呈现。不用在意照片在手机上还是在云端，像平常用三星相册一样打开就好。</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-dl="hero" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="dlApk">下载 APK · v0.6.0</span></a>
+          <a class="btn btn-ghost" href="#install" data-i18n="seeInstall">查看安装方法</a>
+        </div>
+        <ul class="pills" aria-label="概要" data-i18n-attr="aria-label:pillsAria" data-i18n="pills"><li>Android 13 及以上</li><li>个人版 OneDrive</li><li>约 4.9MB</li><li>免费 · 无广告</li><li>한국어 · English · 日本語 · 中文</li></ul>
+      </div>
+      <div class="phone"><img src="/assets/screen-zh.webp" width="300" height="650" alt="中文界面的 Miettes：显示已备份、仅设备、仅云端照片的时间线" data-i18n-attr="alt:demoAlt;src:demoSrc" fetchpriority="low" decoding="async"></div>
+    </div>
+  </section>
+
+  <div class="thanks">
+    <div class="wrap">
+      <div class="card">
+        <img src="/assets/icon-192.webp" width="88" height="88" alt="">
+        <div>
+          <p data-i18n="thanks"><strong>非常感谢你的关注。</strong>你能来到这个页面，对我来说已经是很大的鼓励。Miettes 是我为自己日常使用而做的相册，希望也能帮到遇到同样不便的人，所以把它公开出来。</p>
+          <p class="sign" data-i18n="sign">可颂小鼠（@croissmouse）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="prose">
+        <p class="kicker" data-i18n="storyK">名字的含义</p>
+        <h2 data-i18n="storyH">照片，是我们走过的时光碎屑</h2>
+        <p data-i18n="story1"><strong>Miettes</strong> 在法语里是“碎屑、小碎片”的意思。就像吃完可颂留下的碎屑，我觉得照片也是从日常中掉落下来的小小瞬间和记忆碎片。</p>
+        <p data-i18n="story2">2026 年 9 月 30 日，三星相册的 OneDrive 同步结束了。从那天起，只存在 OneDrive 里的旧照片从相册中消失，云端照片只能另外打开 OneDrive 应用才能看到。手机空间又有限，没法把所有照片都放在手机里。</p>
+        <p data-i18n="story3">所以我只想要一件事：<strong>像什么都没发生过一样，继续用昨天还在用的三星相册。</strong></p>
+      </div>
+      <figure>
+        <img src="/assets/hero-1280.webp" srcset="/assets/hero-720.webp 720w, /assets/hero-1280.webp 1280w" sizes="(max-width:820px) 100vw, 540px" width="1280" height="640" alt="可颂上的小白鼠与照片卡片插画，以及 Miettes 标志" data-i18n-attr="alt:heroAlt" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap">
+      <p class="kicker" data-i18n="prK">我想守住的东西</p>
+      <h2 data-i18n="prH">不需要重新学习的相册</h2>
+      <div class="grid g4">
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-phone"/></svg></div>
+          <h3 data-i18n="pr1h">熟悉的操作，原封不动</h3>
+          <p data-i18n="pr1">One UI 风格的标签栏和大标题、双指缩放 2～12 列、长按拖动多选、上滑查看详情，都跟着三星相册的操作来。点“编辑”会直接打开三星的照片和视频编辑器，备份位置也沿用三星原来在 OneDrive 中使用的 Samsung Gallery 文件夹。</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-drive"/></svg></div>
+          <h3 data-i18n="pr2h">不再多占手机空间</h3>
+          <p data-i18n="pr2">云端照片留在云端直接查看。手机里只缓存缩略图（最多 1GB，从最旧的开始自动清理），原图只在查看时加载或在线播放。</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+          <h3 data-i18n="pr3h">照片安全第一</h3>
+          <p data-i18n="pr3">上传的文件会与 OneDrive 的哈希值比对，确认完整上传。释放设备空间只会删除已确认的照片，而且默认关闭。删除的照片 30 天内都能从回收站恢复；如果一次消失太多照片，还有停止删除的安全机制。</p>
+        </article>
+        <article class="card principle">
+          <div class="tile"><svg aria-hidden="true"><use href="#i-lock"/></svg></div>
+          <h3 data-i18n="pr4h">你的照片只在你和 Microsoft 之间</h3>
+          <p data-i18n="pr4">没有任何自建服务器。手机直接与 Microsoft 官方 API 通信，登录也在 Microsoft 的登录页面完成。我不会收到你的照片或账户信息。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <p class="kicker" data-i18n="ftK">能做什么</p>
+      <h2 data-i18n="ftH">手机照片和云端照片，同一个画面</h2>
+      <div class="grid g8">
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-images"/></svg></div><h3 data-i18n="ft1h">一条时间线</h3><p data-i18n="ft1">把手机照片和 OneDrive 照片按日期合并，相同的照片只显示一张。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-cloud"/></svg></div><h3 data-i18n="ft2h">标明照片在哪里</h3><p data-i18n="ft2">已备份、仅设备、仅云端、等待上传、上传失败，用图标和筛选区分。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-upload"/></svg></div><h3 data-i18n="ft3h">自动备份</h3><p data-i18n="ft3">把新照片上传到 OneDrive，大文件支持断点续传。在设备上修改过的照片会替换同一个文件。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-pencil"/></svg></div><h3 data-i18n="ft4h">用三星编辑器编辑</h3><p data-i18n="ft4">照片和视频都能直接用三星编辑器打开。只在 OneDrive 的照片会先下载原图再交给编辑器。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-book"/></svg></div><h3 data-i18n="ft5h">故事</h3><p data-i18n="ft5">自动整理“N 年前的今天”、照片多的日子和旅行。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-search"/></svg></div><h3 data-i18n="ft6h">搜索</h3><p data-i18n="ft6">按文件名、日期（2024、2024.5）、相册、视频、收藏、GIF 查找。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-play"/></svg></div><h3 data-i18n="ft7h">内置播放器</h3><p data-i18n="ft7">视频在应用内播放，云端视频无需下载直接在线播放。动态照片和 GIF 也会动。</p></article>
+        <article class="card feature"><div class="tile"><svg aria-hidden="true"><use href="#i-share"/></svg></div><h3 data-i18n="ft8h">分享与整理</h3><p data-i18n="ft8">云端照片也能一次分享多张。还有相册、回收站，以及截图、重复照片、大视频的整理。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="install" id="install">
+    <div class="wrap">
+      <div>
+        <p class="kicker" data-i18n="inK">安装与初始设置</p>
+        <h2 data-i18n="inH">5 分钟就能继续用起来</h2>
+        <ol class="steps">
+          <li data-i18n="in1"><strong>下载并安装 APK。</strong>在手机上点<a data-dl="install" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk">下载</a>，并允许安装“未知来源应用”。</li>
+          <li data-i18n="in2"><strong>允许访问全部照片和视频。</strong>用到哪些权限、为什么用，写在<a href="#permissions">下方</a>。</li>
+          <li data-i18n="in3"><strong>菜单 → OneDrive → Microsoft 登录</strong>（个人 Microsoft 账户）。</li>
+          <li data-i18n="in4"><strong>确认要导入的文件夹。</strong>登录后，无论 OneDrive 使用哪种语言，Miettes 都会自动找到 Samsung Gallery 和本机照片文件夹并完成设置。如果你用的是其他文件夹，请在<strong>菜单</strong>中修改。</li>
+          <li data-i18n="in5">文件夹显示“最新”后（首次索引需要几分钟），打开<strong>自动上传新照片</strong>，并允许忽略电池优化。</li>
+        </ol>
+      </div>
+      <aside class="card tip" aria-label="安装提示" data-i18n-attr="aria-label:tipAria">
+        <h3><svg aria-hidden="true"><use href="#i-bulb"/></svg><span data-i18n="tipH">小提示</span></h3>
+        <p data-i18n="tip1">为避免重复上传，请关闭<strong>三星相册的 OneDrive 同步</strong>和<strong>OneDrive 应用的相机备份</strong>。三星已经上传过的照片不会重复上传，只会建立关联。</p>
+        <p data-i18n="tip2">新版本发布后，用同样的方法覆盖安装即可，数据和登录状态都会保留。</p>
+        <p data-i18n="tip3">所有版本都可以在<a href="https://github.com/sanguneo/miettes/releases">发布列表</a>中下载。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="perm" id="permissions">
+    <div class="wrap">
+      <p class="kicker" data-i18n="pmK">第一次打开时会询问的事</p>
+      <h2 data-i18n="pmH">权限与 Microsoft 登录</h2>
+      <p class="intro" data-i18n="pmIntro">Miettes 第一次打开时会一次性请求所需的权限。下面先说明用了什么、为什么用。通讯录、麦克风、相机、设备位置等权限都不会使用。</p>
+      <div class="cols">
+        <div class="card">
+          <h3 data-i18n="pmPhoneH">手机权限</h3>
+          <dl data-i18n="pmPhone"><dt>照片和视频 <span class="tag need">必需</span></dt>
+<dd>用于在时间线中显示手机照片并备份新照片。请务必选择<strong>全部允许</strong>。如果选择“仅限所选照片”，就只会显示选中的照片，新拍的照片也不会自动备份。</dd>
+<dt>照片中的位置信息</dt>
+<dd>用于原样保留照片中的拍摄位置进行备份，并在详情中用地图显示。</dd>
+<dt>通知</dt>
+<dd>在备份进度、需要重新登录、备份积压太久时通知你。关闭通知，应用也能正常运行。</dd>
+<dt>忽略电池优化 <span class="tag">可选</span></dt>
+<dd>让屏幕关闭时备份也不中断。一开始不会询问，可以在<strong>菜单 → 权限与电池</strong>中开启。之后想重新授予权限，也可以在这里申请。</dd>
+<dt>删除或修改照片时</dt>
+<dd>删除、移动、重命名、旋转时，Android 会再弹出一次确认窗口。这是因为相机等其他应用创建的照片，不允许应用随意修改。</dd></dl>
+        </div>
+        <div class="card">
+          <h3 data-i18n="pmMsH">Microsoft 登录</h3>
+          <p data-i18n="pmMs1">点<strong>菜单 → OneDrive → Microsoft 登录</strong>，浏览器会打开 Microsoft 登录页面（<code>login.microsoftonline.com</code>）。密码只在 Microsoft 页面上输入，Miettes 看不到。</p>
+          <p data-i18n="pmMs2">登录后，Microsoft 会显示权限同意页面。Miettes 请求的权限有三项。</p>
+          <ul class="plain" data-i18n="pmMsList"><li><strong>读取和写入文件</strong>：用于显示 OneDrive 照片并上传新照片。受 Microsoft 权限机制所限，会显示为整个 OneDrive 的权限，但实际只读取你设置的照片文件夹；写入的也只有备份的照片，以及你删除、重命名或用链接分享的照片。</li>
+<li><strong>保持登录</strong>：免得每次打开应用都要重新登录。</li>
+<li><strong>读取基本个人资料</strong>：用于在菜单中显示已登录的账户。</li></ul>
+          <p data-i18n="pmMs3">登录信息只保存在手机里的应用存储中，除了 Microsoft 不会发送到任何地方，也不会包含在手机备份中。</p>
+          <p data-i18n="pmMs4">想解除连接时，在应用中点<strong>菜单 → OneDrive → 退出登录</strong>，或在 <a href="https://account.microsoft.com/">Microsoft 账户</a> → 隐私 → “可以访问你数据的应用和服务”中移除权限。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="limits" id="limits">
+    <div class="wrap">
+      <p class="kicker" data-i18n="lmK">先跟你说清楚</p>
+      <h2 data-i18n="lmH">还做不到的事</h2>
+      <ul data-i18n="lmList"><li>以 <strong>Android 13 及以上的三星 Galaxy</strong> 为基准开发和测试（Galaxy S24、Android 13 模拟器）。其他手机尚未测试，三星编辑器联动只在三星手机上可用。</li>
+<li><strong>仅支持个人版 OneDrive。</strong>工作和学校账户尚未测试。</li>
+<li><strong>不是 Play 商店应用。</strong>需要手动安装，也没有自动更新，新版本请从本页面下载。</li>
+<li>在相机应用中点缩略图，打开的仍然是三星相册。这是三星相机的固定行为，无法更改。</li>
+<li>在其他应用（如聊天软件）中添加照片时，Miettes 不会出现在选择器里。只在 OneDrive 的照片，请在 Miettes 里用“分享”发送。</li>
+<li>还不支持按照片内容（如“海”“狗”）搜索，也没有人脸识别。</li>
+<li>只有设备上的动态照片才会动。只在云端的动态照片会显示为静态图片。</li>
+<li>在三星编辑器中保存会生成新的副本，所以编辑后的版本会在时间线中单独显示。</li>
+<li>上传遵循 Android 的后台规则，可能不会立即进行。</li>
+<li>把在 OneDrive 中删除的照片也从设备上删除时，Android 会弹出一次确认窗口。</li></ul>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="card">
+        <h2 data-i18n="clH">散落的碎片，重新回到一处</h2>
+        <p data-i18n="clP">无论这些碎片散落在哪里，我都希望你能在一个地方轻松地重新翻看。用过之后如果有不方便的地方或想要的功能，欢迎随时告诉我，每一条我都会认真看。</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-dl="closing" href="https://github.com/sanguneo/miettes/releases/latest/download/Miettes.apk"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="dlApk">下载 APK · v0.6.0</span></a>
+          <a class="btn btn-ghost" data-fb="closing" href="https://github.com/sanguneo/miettes/issues" data-i18n="feedback">发送反馈</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="ftBy"><strong>Miettes</strong> by 可颂小鼠（@croissmouse）</span>
+    <span><a href="https://github.com/sanguneo/miettes/releases" data-i18n="ftRel">发布</a> · <a data-fb="footer" href="https://github.com/sanguneo/miettes/issues" data-i18n="ftFb">反馈与错误报告</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  // Each language is a static page (/, /en/, /ja/, /zh/) so link previews show the right language.
+  // Generated by build-i18n.ts from i18n.json; edit the Korean in index.html and the rest in i18n.json.
+  var PATH = { ko: '/', en: '/en/', ja: '/ja/', zh: '/zh/' }, KEY = 'miettes-lang';
+  var cur = document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang;
+  function norm(l) { l = String(l || '').toLowerCase().split(/[-_]/)[0]; return PATH[l] ? l : null; }
+  function go(lang) { location.replace(PATH[lang] + location.hash); }
+  if (cur === 'ko' && location.pathname === '/') {
+    var want = norm(new URLSearchParams(location.search).get('lang'));
+    if (!want) { try { want = norm(localStorage.getItem(KEY)); } catch (e) {} }
+    if (!want) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+      for (var i = 0; i < ls.length && !want; i++) want = norm(ls[i]);
+      want = want || 'en';
+    }
+    if (want !== 'ko') return go(want);
+  }
+  var sel = document.getElementById('lang');
+  sel.value = cur;
+  sel.addEventListener('change', function () {
+    try { localStorage.setItem(KEY, sel.value); } catch (e) {}
+    if (window.gtag) gtag('event', 'select_language', { language: sel.value });
+    go(sel.value);
+  });
+})();
+</script>
+<script>
+  // GA4: APK links go to github.com, so enhanced measurement does not count them as downloads.
+  document.addEventListener('click', function (e) {
+    if (!window.gtag) return;
+    var dl = e.target.closest('a[data-dl]');
+    if (dl) gtag('event', 'file_download', {
+      file_name: 'Miettes.apk', file_extension: 'apk', app_version: '0.6.0',
+      link_location: dl.dataset.dl, link_url: dl.href, transport_type: 'beacon'
+    });
+    var fb = e.target.closest('a[data-fb]');
+    if (fb) gtag('event', 'feedback_click', { link_location: fb.dataset.fb, transport_type: 'beacon' });
+  });
+</script>
+</body>
+</html>
